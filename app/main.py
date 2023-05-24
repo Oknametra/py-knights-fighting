@@ -6,7 +6,7 @@ from app.inventory.apply_inventory import Inventory
 
 
 def battle(knights_config: Dict[str, dict]) -> dict:
-
+    # prep : inventory application
     lancelot = knights_config["lancelot"]
     Inventory.inventory_application([lancelot])
 
@@ -18,9 +18,9 @@ def battle(knights_config: Dict[str, dict]) -> dict:
 
     red_knight = knights_config["red_knight"]
     Inventory.inventory_application([red_knight])
-
+    # battle 1
     Battle.battle(lancelot, mordred)
-
+    # battle 2
     Battle.battle(arthur, red_knight)
 
     return {
